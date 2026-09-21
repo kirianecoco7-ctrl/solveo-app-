@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathsÉlite CI - Réussir les Maths en Côte d'Ivoire</title>
+    <style>
+        :root {
+            --primary: #00853f; /* Vert Côte d'Ivoire */
+            --secondary: #f77f00; /* Orange Côte d'Ivoire */
+            --dark: #1d3557;
+            --light: #f8f9fa;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light); color: #333; line-height: 1.6; }
+        header { background-color: var(--primary); color: white; padding: 1.5rem; text-align: center; }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        header p { font-size: 0.95rem; opacity: 0.9; }
+        nav { display: flex; justify-content: center; background: #006630; padding: 0.5rem; }
+        nav button { background: none; border: none; color: white; padding: 0.5rem 1rem; cursor: pointer; font-weight: bold; }
+        nav button:hover { background: rgba(255,255,255,0.2); border-radius: 4px; }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .section-title { color: var(--dark); margin-bottom: 1rem; border-bottom: 3px solid var(--secondary); display: inline-block; padding-bottom: 0.3rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; cursor: pointer; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); border: 1px solid var(--secondary); }
+        .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .btn-orange { background-color: var(--secondary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 0.5rem; }
+        .content-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 1.5rem; display: none; }
+        .content-box.active { display: block; }
+        footer { text-align: center; padding: 1.5rem; background: var(--dark); color: white; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MathsÉlite CI 🇨🇮</h1>
+        <p>L'amour des mathématiques de la 6ème à la Terminale</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('niveaux')">Niveaux</button>
+        <button onclick="showSection('bac')">Sujets BAC & BEPC</button>
+        <button onclick="showSection('methodes')">Situations Complexes</button>
+    </nav>
+
+    <div class="container">
+        <!-- Section Sélection des Niveaux -->
+        <div id="niveaux" class="content-box active">
+            <h2 class="section-title">Choisis ton niveau</h2>
+            <h3>Premier Cycle</h3>
+            <div class="grid" style="margin-top: 0.5rem;">
+                <div class="card"><h3>6ème</h3><p>Calcul, Géométrie de base</p></div>
+                <div class="card"><h3>5ème</h3><p>Priorités opératoires, Angles</p></div>
+                <div class="card"><h3>4ème</h3><p>Équations, Théorème de Pythagore</p></div>
+                <div class="card"><h3>3ème</h3><p>Préparation BEPC, Fonctions</p></div>
+            </div>
+            <h3>Second Cycle</h3>
+            <div class="grid" style="margin-top: 0.5rem;">
+                <div class="card"><h3>Seconde</h3><p>Série A & C/S</p></div>
+                <div class="card"><h3>Première</h3><p>Série A, C, D</p></div>
+                <div class="card"><h3>Terminale</h3><p>Série A, C, D (Prépa BAC)</p></div>
+            </div>
+        </div>
+
+        <!-- Section Sujets BAC & BEPC -->
+        <div id="bac" class="content-box">
+            <h2 class="section-title">Annales & Corrigés</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>BAC D - 2025</h3>
+                    <p>Épreuve complète + Corrigé détaillé</p>
+                    <button class="btn-orange">Télécharger PDF</button>
+                </div>
+                <div class="card">
+                    <h3>BAC C - 2025</h3>
+                    <p>Épreuve complète + Corrigé détaillé</p>
+                    <button class="btn-orange">Télécharger PDF</button>
+                </div>
+                <div class="card">
+                    <h3>BEPC - 2025</h3>
+                    <p>Épreuve officielle + Corrigé pas à pas</p>
+                    <button class="btn-orange">Télécharger PDF</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Situation Complexe -->
+        <div id="methodes" class="content-box">
+            <h2 class="section-title">Méthode de la Situation Complexe</h2>
+            <p><strong>Étape 1 :</strong> Lire attentivement le texte et identifier le problème posé.</p>
+            <p><strong>Étape 2 :</strong> Extraire les données mathématiques (longueurs, prix, pourcentages...).</p>
+            <p><strong>Étape 3 :</strong> Mobiliser les outils du cours (équations, théorèmes, fonctions).</p>
+            <p><strong>Étape 4 :</strong> Rédiger une solution argumentée et conclure explicitement.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>MathsÉlite CI &copy; 2026 - Conçu pour la réussite des élèves de Côte d'Ivoire</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-box').forEach(box => {
+                box.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
